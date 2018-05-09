@@ -3,6 +3,8 @@ var talks = require("./talks.js");
 var app = express();
 const port = process.env.PORT || 5000;
 
+app.use(express.static("public"));
+
 app.get('/', (req, res) => {
     res.send('Hello world'); 
 });

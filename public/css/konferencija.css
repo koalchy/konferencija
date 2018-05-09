@@ -1,0 +1,5 @@
+#map-container {
+    border-top: 4px solid #242424;
+    height: 550px;
+    transform: inherit!important;
+}

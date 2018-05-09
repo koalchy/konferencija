@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Konferencija</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/konferencija.css">
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Konferencija</a>
+            </div>
+            <div class="navbar-right navbar-links">
+                <a href="">Registracija</a>
+                <a href="">Agenda</a>
+                <a href="">Predavanja</a>
+                <a href="">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="conference-slogan">
+            <h1>Konferencija</h1>
+            <h2>konferencija u Beogradu</h2>
+        </div>
+    </header>
+
+    <div class="container-fluid" id="talks-container">
+    </div>
+
+    <div class="container-fluid" id="map-container">
+        <script>
+            function initMap() {
+                var customMapType = new google.maps.StyledMapType([{ "featureType": "all", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative.land_parcel", "elementType": "geometry.stroke", "stylers": [{ "visibility": "off" }] }, { "featureType": "landscape", "elementType": "geometry.fill", "stylers": [{ "color": "#f3ece5" }] }, { "featureType": "poi", "elementType": "geometry.fill", "stylers": [{ "color": "#ddc9b6" }] }, { "featureType": "road", "elementType": "geometry.fill", "stylers": [{ "color": "#ad9379" }] }, { "featureType": "road", "elementType": "labels", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.highway", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "geometry.fill", "stylers": [{ "color": "#e6d8ca" }] }], {
+                    name: 'Conference style'
+                });
+                var customMapTypeId = 'conference_style';
+
+                var coordinates = { lat: 44.8195126, lng: 20.45931 };
+
+                var map = new google.maps.Map(document.getElementById('map-container'), {
+                    zoom: 14,
+                    center: coordinates,
+                    scrollwheel: false,
+                    navigationControl: false,
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    draggable: false,
+                    mapTypeControlOptions: {
+                        mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+                    }
+                });
+
+                var marker = new google.maps.Marker({
+                    position: coordinates,
+                    map: map,
+                    title: 'Matematicki fakultet'
+                });
+                map.mapTypes.set(customMapTypeId, customMapType);
+                map.setMapTypeId(customMapTypeId);
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm9jndhfbcWByQnrivoaWAEQA8jy3COdE&callback=initMap"></script>
+    </div>
+
+    <div class="container" id="footer-container">
+        <div class="row">
+            <div class="col-md-3">
+                <h4>Konferencija</h4>
+                <p>Matematicki fakutlet</p>
+                <p>Studentski Trg 16</p>
+                <p>Beograd, Srbija</p>
+            </div>
+            <div class="col-md-3">
+                <h4>Kontakt</h4>
+                <div class="row contact-details-row">
+                    <div class="col-xs-4">aaaa:</div>
+                    <div class="col-xs-8">+731-555 010 555</div>
+                </div>
+                <div class="row contact-details-row">
+                    <div class="col-xs-4">Reservations:</div>
+                    <div class="col-xs-8">+731-555 011 555</div>
+                </div>
+                <div class="row contact-details-row">
+                    <div class="col-xs-4">Concierge:</div>
+                    <div class="col-xs-8">+731-555 012 555</div>
+                </div>
+            </div>
+            <div class="col-md-offset-1 col-md-5">
+                <div class="row slogan-row">
+                    <div class="col-xs-6">
+                        mesto za sliku
+                    </div>
+                    <div class="col-xs-6">
+                        <p>hehehe</p>
+                        <p>&copy; 2018 All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
