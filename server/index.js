@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
 app.get('/talks.json', (req, res) => {
     res.json(talks.get());
-})
+});
 
 app.listen(port, function(){
     console.log(`Listening on port ${port}`);
