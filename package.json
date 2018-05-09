@@ -1,13 +1,17 @@
 {
-    "name": "konferencija",
-    "version": "1.0.0",
-    "description": "Konferencija PWA",
-    "author": "Stana Kaljevic <s.obrenic@gmail.com>",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/koalchy/konferencija.git"
-    },
-    "devDependencies": {
-      "express": "^4.16.0"
-    }
+  "name": "konferencija",
+  "version": "1.0.0",
+  "description": "Konferencija PWA",
+  "author": "Stana Kaljevic <s.obrenic@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koalchy/konferencija.git"
+  },
+  "devDependencies": {
+    "express": "^4.16.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "lowdb": "^1.0.0"
   }
+}
