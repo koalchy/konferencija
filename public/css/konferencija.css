@@ -1,5 +1,15 @@
+/* Map Widget */
 #map-container {
-    border-top: 4px solid #242424;
-    height: 550px;
-    transform: inherit!important;
+  border-top: 4px solid #242424;
+  height: 550px;
+  transform: inherit!important;
+}
+
+#map-container.offline-map {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-image: url('/img/map-offline.jpg');
 }
